@@ -16,6 +16,15 @@ class _AndroidUtilsKeywords(KeywordGroup):
         driver = self._current_application()
         driver.open_notifications()
         
+    def get_package(self):
+        """Retrieves the current package on the device.
+
+        Android only.
+
+        """
+        driver = self._current_application()
+        return driver.current_package
+    
     def get_network_connection_status(self):
         """Returns an integer bitmask specifying the network connection type.
 
