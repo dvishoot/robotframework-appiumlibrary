@@ -473,6 +473,11 @@ class _ElementKeywords(KeywordGroup):
         self._info("Current page contains %s elements matching '%s'."
                    % (actual_xpath_count, xpath))
 
+    def element_find_for_scroll(self, locator):
+        application = self._current_application()
+        elements = self._element_finder.find(application, locator)
+        return elements
+
     # Private
 
     def _is_index(self, index_or_name):
